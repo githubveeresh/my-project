@@ -1,5 +1,5 @@
-FROM openjdk:8-jre-alpine
-
+#FROM openjdk:8-jre-alpine
+FROM amazoncorretto:8-alpine
 EXPOSE 8080
 
 COPY ./build/libs/my-app-1.0-SNAPSHOT.jar /usr/app/
