@@ -29,6 +29,17 @@ jobs:
       run: ./gradlew build
     - name: Build and push Docker image new
       run: docker build -t neduru/sample-project:latest .
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+       username: ${{ secrets.DOCKER_USERNAME }}
+    # Make sure this name matches exactly what you named the secret in Step 2
+       password: ${{ secrets.DOCKER_TOKEN }} 
+
+    - name: Build and push
+      run: |
+       docker build -t docker.io/neduru/sample-project:${{ github.sha }} .
+       docker push docker.io/neduru/sample-project:${{ github.sha }}
 
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
