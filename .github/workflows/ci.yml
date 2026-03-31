@@ -42,7 +42,7 @@ jobs:
       with:
        username: ${{ secrets.DOCKER_USERNAME }}
     # Make sure this name matches exactly what you named the secret in Step 2
-       password: ${{ secrets.DOCKER_TOKEN }}
+       password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push
       run: |
