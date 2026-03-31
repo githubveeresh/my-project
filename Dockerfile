@@ -1,4 +1,3 @@
-#FROM openjdk:8-jre-alpine
 FROM amazoncorretto:8-alpine
 EXPOSE 8080
 
