@@ -32,9 +32,9 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v3
       with:
-       username: ${{ secrets.DOCKER_USERNAME }}
+       username: neduru
     # Make sure this name matches exactly what you named the secret in Step 2
-       password: ${{ secrets.DOCKER_TOKEN }} 
+       password: Siri@143@143
 
     - name: Build and push
       run: |
